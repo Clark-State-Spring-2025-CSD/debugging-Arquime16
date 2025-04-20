@@ -1,7 +1,7 @@
 #This file is used in the lecture
 
 def AddTwoNumbers(x,y):
-    result = x - y
+    result = x + y
     return result
 
 v1 = 5
