@@ -1,3 +1,4 @@
+# The math module was imported so that the program works
 import math
 
 multiChannel = 0
@@ -15,7 +16,7 @@ def ChannelAdd(channelID, value):
     global multiChannel
 
     currentValue = ChannelGetValue(channelID)
-    currentValue -= value
+    currentValue += value
     if not ValidateValue(currentValue): return
     ChannelSetValue(channelID, currentValue)
 
@@ -31,9 +32,8 @@ def ChannelClear(channelID):
     if channelID == -1:
         multiChannel = 0
     else:
-        channelValue = ChannelGetValue(channelID)    
-        channelValue = channelValue * (1000**(channelID - 1))
-        multiChannel -= channelValue
+        channel_value = ChannelGetValue(channelID) * (1000 ** (channelID - 1))
+        multiChannel -= channel_value
 
 def ValidateValue(value):
     if value < 999 and value > 0: 
